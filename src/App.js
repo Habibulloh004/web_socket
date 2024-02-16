@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import io from "socket.io-client";
 
-const socket = io.connect("https://mire-attractive-okra.glitch.me/");
+const socket = io.connect("");
 function App() {
   const [message, setMessage] = useState("");
   const [recieveMsg, setRecieveMsg] = useState("");
@@ -25,6 +25,12 @@ function App() {
       setRecieveMsg(data.message);
       console.log(data);
     });
+    // socket.on("userId", (userId) => {
+    //   console.log(userId);
+    // })
+    socket.on("msg", (msg) => {
+      console.log(msg);
+    })
   }, [socket]);
 
   return (
