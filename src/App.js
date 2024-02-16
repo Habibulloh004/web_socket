@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import io from "socket.io-client";
 
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect("https://mire-attractive-okra.glitch.me/");
 function App() {
   const [message, setMessage] = useState("");
   const [recieveMsg, setRecieveMsg] = useState("");
