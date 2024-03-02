@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import io from "socket.io-client";
 
-const socket = io.connect("");
+const socket = io.connect("https://web-socket-server-8k3j.onrender.com");
 function App() {
   const [message, setMessage] = useState("");
   const [recieveMsg, setRecieveMsg] = useState("");
@@ -16,7 +16,6 @@ function App() {
   const sendMessage = () => {
     socket.emit("send_message", {
       message,
-      room,
     });
   };
 
@@ -30,7 +29,7 @@ function App() {
     // })
     socket.on("msg", (msg) => {
       console.log(msg);
-    })
+    });
   }, [socket]);
 
   return (
