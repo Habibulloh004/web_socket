@@ -7,16 +7,16 @@ function App() {
   const [recieveMsg, setRecieveMsg] = useState("");
   const [room, setRoom] = useState("");
 
-  const joinRoom = () => {
-    if (room !== "") {
-      socket.emit("join_room", room);
-    }
-  };
+  // const joinRoom = () => {
+  //   if (room !== "") {
+  //     socket.emit("join_room", room);
+  //   }
+  // };
 
   const sendMessage = () => {
     socket.emit("send_message", {
       message,
-      room,
+      // room,
     });
   };
 
@@ -33,9 +33,9 @@ function App() {
 
   return (
     <div className="App">
-      <input placeholder="Room..." onChange={(e) => setRoom(e.target.value)} />
+      {/* <input placeholder="Room..." onChange={(e) => setRoom(e.target.value)} />
       <button onClick={joinRoom}>Join room</button>
-      <br />
+      <br /> */}
       <input
         placeholder="Type..."
         onChange={(e) => setMessage(e.target.value)}
